@@ -1,0 +1,65 @@
+Run Maven with Browser Parameter
+
+mvn clean test -Dbrowser=CHROME
+---------------------------------------------------------------------------------
+RUN Maven Command with multiple testng.xml
+<configuration>
+    <suiteXmlFiles>
+        <suiteXmlFile>testng1.xml</suiteXmlFile>
+        <suiteXmlFile>testng2.xml</suiteXmlFile>
+    </suiteXmlFiles>
+</configuration>
+
+---------------------------------------------------------------------------------
+RUN Maven Command with Path
+mvn run -> mvn clean test -Dsurefire.suiteXmlFiles=testng1.xml, testng2.xml
+note: disable the <configuration> and <suiteXmlFile> in pom.xml
+
+---------------------------------------------------------------------------------
+Maven Parameterized
+<properties>
+    <suiteFile>testng.xml</suiteFile>
+</properties>
+
+<suiteXmlFiles>
+    <suiteXmlFile>${suiteFile}</suiteXmlFile>
+</suiteXmlFiles>
+
+mvn run -> mvn clean test -DsuiteFile=testng_ff.xml
+-> this will run testng_ff.xml, if not included it will run the default (testng.xml)
+
+---------------------------------------------------------------------------------
+TestNG
+Run Parallel - 1 Browser
+<Suite> parallel="methods"
+<test> empty
+
+Run Parallel - 2 Browsers
+<Suite> parallel="tests" thread-count="8"
+<test> parallel="methods" thread-count="8"
+
+
+others:
+parallel="classes"
+parallel="instances"
+
+---------------------------------------------------------------------------------
+Git terminal commands
+
+git --version
+
+git config --global user.name "username"
+git config --global user.email "email@test.com"
+
+git config --global user.name
+git config --global user.email
+
+
+---------------------------------------------------------------------------------
+Git Ignore
+command -> git update-index --assume-unchanged src/file/to/ignore
+undo -> git update-index --no-assume-unchanged src/file/to/ignore
+
+---------------------------------------------------------------------------------
+Run > Edit Configurations
+add -Dbrowser=FIREFOX

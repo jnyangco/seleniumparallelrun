@@ -1,0 +1,1 @@
+<input type="hidden" id="woocommerce-register-nonce" name="woocommerce-register-nonce" value="6945dc48c9"/>
