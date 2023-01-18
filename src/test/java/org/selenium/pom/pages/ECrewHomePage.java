@@ -14,9 +14,8 @@ public class ECrewHomePage extends BasePage {
     private final By crewName = By.xpath("//div[@view_id='crewname']/div");
 
     private final By crewScheduleButton = By.xpath("//span[text()='Crew Schedule']");
+    private final By myScheduleButton = By.xpath("//span[text()='My Schedule']");
     private final By dutyDetailsButton = By.xpath("//button[text()='Duty details']");
-
-
 
 
 
@@ -29,7 +28,7 @@ public class ECrewHomePage extends BasePage {
     }
 
     //note: when navigating to other page -> use Fluent Interface -> return object of the Page
-    public void verifyUserIsLoggedIn() {
+    public void waitForLoadingToDisappear() {
         System.out.println(">> verifyUserIsLoggedIn");
 
         waitForLoadingToDisappear(loadingIcon);
@@ -54,6 +53,12 @@ public class ECrewHomePage extends BasePage {
     public void clickCrewSchedule() {
         System.out.println(">> clickCrewSchedule");
         driver.findElement(crewScheduleButton).click();
+        //wait.until(ExpectedConditions.elementToBeClickable(dutyDetailsButton)).click();
+    }
+
+    public void clickMySchedule() {
+        System.out.println(">> clickMySchedule");
+        driver.findElement(myScheduleButton).click();
         //wait.until(ExpectedConditions.elementToBeClickable(dutyDetailsButton)).click();
     }
 

@@ -23,7 +23,7 @@ public class DriverManager {
         switch (BrowserType.valueOf(browser)) { //converting browser string to enum constants
             case CHROME:
                 ChromeOptions options = new ChromeOptions();
-                options.addArguments("headless");
+                //options.addArguments("headless");
                 WebDriverManager.chromedriver().cachePath(System.getProperty("user.dir")+"\\src\\test\\java\\org\\selenium\\pom\\drivers").setup();
                 driver = new ChromeDriver(options);
                 break;
