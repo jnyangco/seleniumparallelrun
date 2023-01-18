@@ -63,3 +63,53 @@ undo -> git update-index --no-assume-unchanged src/file/to/ignore
 ---------------------------------------------------------------------------------
 Run > Edit Configurations
 add -Dbrowser=FIREFOX
+
+
+---------------------------------------------------------------------------------
+Screenshot (whole page)
+https://github.com/pazone/ashot
+<dependency>
+    <groupId>ru.yandex.qatools.ashot</groupId>
+    <artifactId>ashot</artifactId>
+    <version>1.5.4</version>
+</dependency>
+
+---------------------------------------------------------------------------------
+docs.qameta.io/allure/#_testng
+cd C:\Automation Repo\seleniumparallelrun
+Run > allure serve allure-results           => depends on folder name,
+Run > allure serve target/allure-results    => depends on folder name (i.e "target" folder)
+note: allure-results - is the folder name
+
+
+---------------------------------------------------------------------------------
+Git Ignore file
+.idea
+target
+*.iml
+*.zip
+.gitignore -> optional
+
+git status
+git add --all
+
+
+---------------------------------------------------------------------------------
+Jenkins
+> Download Jenkins: https://www.jenkins.io/download/
+> Open Cmd prompt and type go to folder i.e: download -> cd folder
+> type "java -jar jenkins.jar"
+> Launch http://localhost:8080
+> Unlock Jenkins:
+  Admin Password: C\Program Files (86)\Jenkins\secrets\initialAdminPassword
+> Create first admin user and login
+
+
+Mac:
+brew install jenkins-lts
+brew services start jenkins-lts
+brew services restart jenkins-lts
+Launch http://localhost:8080
+Go > /Users/<user1>/.jenkins/secrets/initialAdminPassword
+Create first admin user and login
+---------------------------------------------------------------------------------

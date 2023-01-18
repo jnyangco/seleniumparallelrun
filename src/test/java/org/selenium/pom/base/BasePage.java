@@ -18,7 +18,7 @@ public class BasePage {
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(120));
         //we can have different wait variables to be used on other pages
         //waitLong = new WebDriverWait(driver, Duration.ofSeconds(30));
         //waitShort = new WebDriverWait(driver, Duration.ofSeconds(5));

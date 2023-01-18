@@ -53,12 +53,5 @@ public class BaseTest {
         getDriver().quit();
     }
 
-    public void injectCookiesToBrowser(Cookies cookies) {
-        List<Cookie> seleniumCookies = new CookieUtils().convertRestAssuredCookiesToSeleniumCookies(cookies);
-        for(Cookie cookie: seleniumCookies) {
-            getDriver().manage().addCookie(cookie);
-        }
-    }
-
 
 }
