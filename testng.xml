@@ -4,7 +4,7 @@
     <test name="Firefox"   >
         <parameter name="browser" value="CHROME"/>
         <classes>
-            <class name="org.selenium.pom.tests.MyFirstTestCase" />
+            <class name="org.selenium.pom.tests.ECrewTest" />
         </classes>
     </test>
 

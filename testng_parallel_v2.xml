@@ -15,7 +15,7 @@
 <!--    <test name="Firefox" parallel="methods" >-->
 <!--        <parameter name="browser" value="FIREFOX"/>-->
 <!--        <classes>-->
-<!--            <class name="org.selenium.pom.tests.MyFirstTestCase" />-->
+<!--            <class name="org.selenium.pom.tests.ECrewTest" />-->
 <!--        </classes>-->
 <!--    </test>-->
 </suite>
