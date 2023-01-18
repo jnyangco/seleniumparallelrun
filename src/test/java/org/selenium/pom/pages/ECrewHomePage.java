@@ -17,6 +17,8 @@ public class ECrewHomePage extends BasePage {
     private final By myScheduleButton = By.xpath("//span[text()='My Schedule']");
     private final By dutyDetailsButton = By.xpath("//button[text()='Duty details']");
 
+    private final By nextPeriodButton = By.xpath("//button[text()='Next Period']");
+
 
 
     public ECrewHomePage(WebDriver driver) {
@@ -62,9 +64,17 @@ public class ECrewHomePage extends BasePage {
         //wait.until(ExpectedConditions.elementToBeClickable(dutyDetailsButton)).click();
     }
 
+    public void clickNextPeriod() {
+        System.out.println(">> clickNextPeriod");
+        driver.findElement(nextPeriodButton).click();
+        //wait.until(ExpectedConditions.elementToBeClickable(dutyDetailsButton)).click();
+    }
+
     public void clickDutyDetails() {
         System.out.println(">> clickDutyDetails");
         //driver.findElement(dutyDetailsButton).click();
         wait.until(ExpectedConditions.elementToBeClickable(dutyDetailsButton)).click();
     }
+
+
 }

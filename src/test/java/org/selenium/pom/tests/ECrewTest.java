@@ -34,11 +34,14 @@ public class ECrewTest extends BaseTest {
         System.out.println(">> Verify User is Logged In");
         ECrewHomePage eCrewHomePage = new ECrewHomePage(getDriver());
         eCrewHomePage.waitForLoadingToDisappear();
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         //switchFrame(0);
         //eCrewHomePage.clickDutyDetails();
         eCrewHomePage.clickCrewSchedule();
         eCrewHomePage.clickMySchedule();
+        eCrewHomePage.waitForLoadingToDisappear();
+
+        eCrewHomePage.clickNextPeriod();
         eCrewHomePage.waitForLoadingToDisappear();
     }
 }
