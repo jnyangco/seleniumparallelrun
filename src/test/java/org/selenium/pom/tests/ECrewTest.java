@@ -41,6 +41,8 @@ public class ECrewTest extends BaseTest {
         eCrewHomePage.clickMySchedule();
         eCrewHomePage.waitForLoadingToDisappear();
 
+        switchFrame(0);
+        Thread.sleep(2000);
         eCrewHomePage.clickNextPeriod();
         eCrewHomePage.waitForLoadingToDisappear();
     }
