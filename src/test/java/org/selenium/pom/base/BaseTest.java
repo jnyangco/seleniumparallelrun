@@ -1,6 +1,7 @@
 package org.selenium.pom.base;
 
 import io.restassured.http.Cookies;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.selenium.pom.factory.DriverManager;
@@ -51,6 +52,14 @@ public class BaseTest {
 
         Thread.sleep(3000);
         getDriver().quit();
+    }
+
+
+    public void switchFrame(int frameNumber) {
+        int totalFrame = getDriver().findElements(By.tagName("iframe")).size();
+        System.out.println("Total Frame = " +totalFrame);
+
+        getDriver().switchTo().frame(frameNumber);
     }
 
 

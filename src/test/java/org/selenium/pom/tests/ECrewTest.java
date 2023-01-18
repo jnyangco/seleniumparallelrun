@@ -23,14 +23,19 @@ public class ECrewTest extends BaseTest {
 //        eCrewHomePage.verifyUserIsLoggedIn();
 //    }
 
-    @Test(invocationCount=40, threadPoolSize=40)
-    public void eCrewLoginTest() {
+    @Test(invocationCount=25, threadPoolSize=25)
+    public void eCrewLoginTest() throws InterruptedException {
 
+        System.out.println(">> Start Execution");
         ECrewLoginPage eCrewLoginPage = new ECrewLoginPage(getDriver());
         eCrewLoginPage.load();
         eCrewLoginPage.login("254830", "67025116");
 
+        System.out.println(">> Verify User is Logged In");
         ECrewHomePage eCrewHomePage = new ECrewHomePage(getDriver());
         eCrewHomePage.verifyUserIsLoggedIn();
+        //Thread.sleep(10000);
+        switchFrame(0);
+        eCrewHomePage.clickDutyDetails();
     }
 }
