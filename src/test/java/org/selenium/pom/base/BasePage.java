@@ -29,27 +29,11 @@ public class BasePage {
         driver.get(ConfigLoader.getInstance().getBaseUrl() + endPoint);
     }
 
-//    public void waitForOverlaysToDisapper(By overlay) {
-//        List<WebElement> overlays = driver.findElements(overlay);
-//        System.out.println("OVERLAY SIZE : " +overlays.size());
-//        if(overlays.size() > 0) {
-//            wait.until(ExpectedConditions.invisibilityOfAllElements(overlays));
-//            System.out.println("OVERLAYS ARE INVISIBLE");
-//        } else {
-//            System.out.println("OVERLAY NOT FOUND");
-//        }
-//    }
-
     public void waitForLoadingToDisappear(By loading) {
         List<WebElement> overlays = driver.findElements(loading);
-        System.out.println("LOADING SIZE : " +overlays.size());
+        //System.out.println("LOADING SIZE : " +overlays.size());
         wait.until(ExpectedConditions.invisibilityOfElementLocated(loading));
-        System.out.println("LOADING COMPLETED");
+        System.out.println(">> Loading Completed");
     }
-
-//    public WebElement waitForElementToBeVisible(By element) {
-//        return wait.until(ExpectedConditions.visibilityOfElementLocated(element));
-//    }
-
 
 }

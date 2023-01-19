@@ -12,38 +12,25 @@ import java.io.IOException;
 
 public class ECrewTest extends BaseTest {
 
-//    @Test(dataProvider = "userLogins", dataProviderClass = MyDataProvider.class)
-//    public void eCrewLoginTest(UserLogin userLogin) {
-//
-//        ECrewLoginPage eCrewLoginPage = new ECrewLoginPage(getDriver());
-//        eCrewLoginPage.load();
-//        eCrewLoginPage.login(userLogin.getCrewID(), userLogin.getPassword());
-//
-//        ECrewHomePage eCrewHomePage = new ECrewHomePage(getDriver());
-//        eCrewHomePage.verifyUserIsLoggedIn();
-//    }
-
-    @Test(invocationCount=2, threadPoolSize=2)
+    @Test(invocationCount=20, threadPoolSize=20)
     public void eCrewLoginTest() throws InterruptedException {
 
         System.out.println(">> Start Execution");
         ECrewLoginPage eCrewLoginPage = new ECrewLoginPage(getDriver());
         eCrewLoginPage.load();
+
+        System.out.println(">> Enter Crew ID and Password");
         eCrewLoginPage.login("254830", "67025116");
 
-        System.out.println(">> Verify User is Logged In");
         ECrewHomePage eCrewHomePage = new ECrewHomePage(getDriver());
         eCrewHomePage.waitForLoadingToDisappear();
-        Thread.sleep(5000);
-        //switchFrame(0);
-        //eCrewHomePage.clickDutyDetails();
-        eCrewHomePage.clickCrewSchedule();
-        eCrewHomePage.clickMySchedule();
-        eCrewHomePage.waitForLoadingToDisappear();
+        System.out.println(">> User is Logged In");
 
+        Thread.sleep(45000);
         switchFrame(0);
-        Thread.sleep(2000);
-        eCrewHomePage.clickNextPeriod();
+        eCrewHomePage.clickFitUnfit();
         eCrewHomePage.waitForLoadingToDisappear();
+        System.out.println(">> Execution Completed");
+
     }
 }

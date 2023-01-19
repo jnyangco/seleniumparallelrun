@@ -15,10 +15,11 @@ public class ECrewHomePage extends BasePage {
 
     private final By crewScheduleButton = By.xpath("//span[text()='Crew Schedule']");
     private final By myScheduleButton = By.xpath("//span[text()='My Schedule']");
+
     private final By dutyDetailsButton = By.xpath("//button[text()='Duty details']");
+    private final By dutyFitUnfitButton = By.xpath("//button[text()='Fit/Unfit']");
 
     private final By nextPeriodButton = By.xpath("//button[text()='Next Period']");
-
 
 
     public ECrewHomePage(WebDriver driver) {
@@ -29,51 +30,34 @@ public class ECrewHomePage extends BasePage {
         load("/");
     }
 
-    //note: when navigating to other page -> use Fluent Interface -> return object of the Page
     public void waitForLoadingToDisappear() {
         System.out.println(">> verifyUserIsLoggedIn");
-
         waitForLoadingToDisappear(loadingIcon);
-        //wait.until(ExpectedConditions.invisibilityOfElementLocated(loadingIcon));
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(crewAvatar));
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(eCrewLogo));
-//        String name = getCrewName();
-//        System.out.println("Crew Name -> " +name);
-
-
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(dutyDetailsButton)).click();
-        //wait.until(ExpectedConditions.elementToBeClickable(dutyDetailsButton)).click();
-        //driver.findElement(dutyDetailsButton).click();
-
-
     }
-
-//    public String getCrewName() {
-//        return wait.until(ExpectedConditions.visibilityOfElementLocated(crewName)).getText();
-//    }
 
     public void clickCrewSchedule() {
         System.out.println(">> clickCrewSchedule");
-        driver.findElement(crewScheduleButton).click();
-        //wait.until(ExpectedConditions.elementToBeClickable(dutyDetailsButton)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(crewScheduleButton)).click();
     }
 
     public void clickMySchedule() {
         System.out.println(">> clickMySchedule");
-        driver.findElement(myScheduleButton).click();
-        //wait.until(ExpectedConditions.elementToBeClickable(dutyDetailsButton)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(myScheduleButton)).click();
     }
 
     public void clickNextPeriod() {
         System.out.println(">> clickNextPeriod");
-        driver.findElement(nextPeriodButton).click();
-        //wait.until(ExpectedConditions.elementToBeClickable(dutyDetailsButton)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(nextPeriodButton)).click();
     }
 
     public void clickDutyDetails() {
         System.out.println(">> clickDutyDetails");
-        //driver.findElement(dutyDetailsButton).click();
         wait.until(ExpectedConditions.elementToBeClickable(dutyDetailsButton)).click();
+    }
+
+    public void clickFitUnfit() {
+        System.out.println(">> clickFitUnfit");
+        wait.until(ExpectedConditions.elementToBeClickable(dutyFitUnfitButton)).click();
     }
 
 

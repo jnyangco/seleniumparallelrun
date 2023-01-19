@@ -62,5 +62,4 @@ public class BaseTest {
         getDriver().switchTo().frame(frameNumber);
     }
 
-
 }
