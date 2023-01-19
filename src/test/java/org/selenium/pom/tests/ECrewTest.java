@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class ECrewTest extends BaseTest {
 
-    @Test(invocationCount=20, threadPoolSize=20)
+    @Test(invocationCount=30, threadPoolSize=30)
     public void eCrewLoginTest() throws InterruptedException {
 
         System.out.println(">> Start Execution");
@@ -26,7 +26,7 @@ public class ECrewTest extends BaseTest {
         eCrewHomePage.waitForLoadingToDisappear();
         System.out.println(">> User is Logged In");
 
-        Thread.sleep(45000);
+        Thread.sleep(50000);
         switchFrame(0);
         eCrewHomePage.clickFitUnfit();
         eCrewHomePage.waitForLoadingToDisappear();
